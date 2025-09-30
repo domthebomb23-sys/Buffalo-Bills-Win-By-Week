@@ -1,0 +1,102 @@
+{
+  "1": {
+    "lead_changes": 6,
+    "biggest_win_prob_swing": 0.154,
+    "close_game_play_pct": 19.75
+  },
+  "2": {
+    "lead_changes": 5,
+    "biggest_win_prob_swing": 0.117,
+    "close_game_play_pct": 22.22
+  },
+  "3": {
+    "lead_changes": 0,
+    "biggest_win_prob_swing": 0.119,
+    "close_game_play_pct": 4.0
+  },
+  "4": {
+    "lead_changes": 0,
+    "biggest_win_prob_swing": 0.151,
+    "close_game_play_pct": 6.54
+  },
+  "5": {
+    "lead_changes": 4,
+    "biggest_win_prob_swing": 0.311,
+    "close_game_play_pct": 23.3
+  },
+  "6": {
+    "lead_changes": 11,
+    "biggest_win_prob_swing": 0.169,
+    "close_game_play_pct": 50.57
+  },
+  "7": {
+    "lead_changes": 10,
+    "biggest_win_prob_swing": 0.15,
+    "close_game_play_pct": 31.74
+  },
+  "8": {
+    "lead_changes": 7,
+    "biggest_win_prob_swing": 0.214,
+    "close_game_play_pct": 17.44
+  },
+  "9": {
+    "lead_changes": 12,
+    "biggest_win_prob_swing": 0.286,
+    "close_game_play_pct": 39.76
+  },
+  "10": {
+    "lead_changes": 3,
+    "biggest_win_prob_swing": 0.21,
+    "close_game_play_pct": 23.63
+  },
+  "11": {
+    "lead_changes": 0,
+    "biggest_win_prob_swing": 0.139,
+    "close_game_play_pct": 12.2
+  },
+  "13": {
+    "lead_changes": 8,
+    "biggest_win_prob_swing": 0.119,
+    "close_game_play_pct": 24.83
+  },
+  "14": {
+    "lead_changes": 0,
+    "biggest_win_prob_swing": 0.156,
+    "close_game_play_pct": 11.41
+  },
+  "15": {
+    "lead_changes": 3,
+    "biggest_win_prob_swing": 0.105,
+    "close_game_play_pct": 6.03
+  },
+  "16": {
+    "lead_changes": 4,
+    "biggest_win_prob_swing": 0.252,
+    "close_game_play_pct": 20.34
+  },
+  "17": {
+    "lead_changes": 0,
+    "biggest_win_prob_swing": 0.115,
+    "close_game_play_pct": 7.14
+  },
+  "18": {
+    "lead_changes": 10,
+    "biggest_win_prob_swing": 0.186,
+    "close_game_play_pct": 30.81
+  },
+  "19": {
+    "lead_changes": 4,
+    "biggest_win_prob_swing": 0.143,
+    "close_game_play_pct": 26.42
+  },
+  "20": {
+    "lead_changes": 6,
+    "biggest_win_prob_swing": 0.241,
+    "close_game_play_pct": 21.02
+  },
+  "21": {
+    "lead_changes": 8,
+    "biggest_win_prob_swing": 0.156,
+    "close_game_play_pct": 26.7
+  }
+}

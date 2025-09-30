@@ -60,14 +60,18 @@ function renderChartsForWeek(data, week) {
             y: {
               min: 0,
               max: 1,
-              title: { display: true, text: 'Win Probability' }
+              title: { display: true, text: 'Win Probability', color: '#fff' },
+              ticks: { color: '#fff' },
+              grid: { color: 'rgba(255,255,255,0.2)' }
             },
             x: {
-              title: { display: true, text: 'Play ID' }
+              title: { display: true, text: 'Play ID', color: '#fff' },
+              ticks: { color: '#fff' },
+              grid: { color: 'rgba(255,255,255,0.2)' }
             }
           },
           plugins: {
-            legend: { display: false }
+            legend: { display: false, labels: { color: '#fff' } }
           }
         }
       });
@@ -77,10 +81,37 @@ function renderChartsForWeek(data, week) {
   });
 }
 
+// Fetch excitement metrics
+async function fetchExcitementMetrics() {
+  const response = await fetch('static/excitement_by_week.json');
+  return await response.json();
+}
+
+function renderExcitementForWeek(metrics, week) {
+  const container = document.getElementById('excitement-week-metrics');
+  const vals = metrics[week];
+  if (!vals) {
+    container.innerHTML = '<em>No metrics available for this week.</em>';
+    return;
+  }
+  container.innerHTML = `
+    <ul>
+      <li><strong>Lead Changes:</strong> ${vals.lead_changes}</li>
+      <li><strong>Biggest Win Probability Swing:</strong> ${vals.biggest_win_prob_swing}</li>
+      <li><strong>% Close Game Plays:</strong> ${vals.close_game_play_pct}%</li>
+    </ul>
+  `;
+}
+
 // Main
-fetchWinProbabilityData().then(data => {
+Promise.all([fetchWinProbabilityData(), fetchExcitementMetrics()]).then(([data, metrics]) => {
   const weeks = getWeeks(data);
-  renderWeekSelector(weeks, week => renderChartsForWeek(data, week));
-  // Show first week by default
-  if (weeks.length) renderChartsForWeek(data, weeks[0]);
+  function onWeekSelect(week) {
+    renderChartsForWeek(data, week);
+    renderExcitementForWeek(metrics, week);
+  }
+  renderWeekSelector(weeks, onWeekSelect);
+  if (weeks.length) {
+    onWeekSelect(weeks[0]);
+  }
 });
