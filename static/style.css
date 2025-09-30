@@ -38,11 +38,13 @@ h1 {
   color: #fff;
 }
 .most-exciting {
-  background: #C60C30 !important;
-  color: #FFD700 !important;
-  border: 2px solid #FFD700 !important;
+  background: linear-gradient(90deg, #C60C30 60%, #FFD700 100%) !important;
+  color: #fff !important;
+  border: 3px solid #FFD700 !important;
   font-weight: bold;
-  box-shadow: 0 0 12px #FFD70088;
+  box-shadow: 0 0 16px #FFD700cc;
+  position: relative;
+  z-index: 2;
 }
 #excitement-metrics-container {
   background: rgba(255,255,255,0.12);

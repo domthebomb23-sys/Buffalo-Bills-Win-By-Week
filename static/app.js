@@ -38,7 +38,7 @@ function renderWeekSelector(weeks, onSelect, metrics) {
     if (mostExcitingWeek && String(week) === String(mostExcitingWeek)) {
       btn.classList.add('most-exciting');
       btn.title = 'Most Exciting Week!';
-      btn.textContent += ' ⭐';
+      btn.innerHTML = `<span style="color:#FFD700;font-size:1.2em;">⭐</span> Week ${week}`;
     }
     selector.appendChild(btn);
   });
