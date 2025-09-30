@@ -11,14 +11,35 @@ function getWeeks(data) {
   return weeks.sort((a, b) => a - b);
 }
 
-function renderWeekSelector(weeks, onSelect) {
+function getMostExcitingWeek(metrics) {
+  // Composite excitement score: lead_changes + close_game_play_pct + biggest_win_prob_swing
+  let bestWeek = null;
+  let bestScore = -Infinity;
+  Object.entries(metrics).forEach(([week, vals]) => {
+    // You can tweak the weights here
+    const score = vals.lead_changes * 2 + vals.close_game_play_pct + vals.biggest_win_prob_swing * 100;
+    if (score > bestScore) {
+      bestScore = score;
+      bestWeek = week;
+    }
+  });
+  return bestWeek;
+}
+
+function renderWeekSelector(weeks, onSelect, metrics) {
   const selector = document.getElementById('week-selector');
   selector.innerHTML = '';
+  const mostExcitingWeek = metrics ? getMostExcitingWeek(metrics) : null;
   weeks.forEach(week => {
     const btn = document.createElement('button');
     btn.textContent = `Week ${week}`;
     btn.onclick = () => onSelect(week);
     btn.className = 'week-btn';
+    if (mostExcitingWeek && String(week) === String(mostExcitingWeek)) {
+      btn.classList.add('most-exciting');
+      btn.title = 'Most Exciting Week!';
+      btn.textContent += ' ⭐';
+    }
     selector.appendChild(btn);
   });
 }
@@ -110,7 +131,7 @@ Promise.all([fetchWinProbabilityData(), fetchExcitementMetrics()]).then(([data, 
     renderChartsForWeek(data, week);
     renderExcitementForWeek(metrics, week);
   }
-  renderWeekSelector(weeks, onWeekSelect);
+  renderWeekSelector(weeks, onWeekSelect, metrics);
   if (weeks.length) {
     onWeekSelect(weeks[0]);
   }

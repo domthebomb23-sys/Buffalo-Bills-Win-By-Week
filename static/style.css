@@ -22,7 +22,7 @@ h1 {
   text-align: center;
   margin: 20px 0;
 }
-.week-btn {
+ .week-btn {
   background: #00338D;
   color: #fff;
   border: 2px solid #C60C30;
@@ -36,6 +36,13 @@ h1 {
 .week-btn:hover, .week-btn:focus {
   background: #C60C30;
   color: #fff;
+}
+.most-exciting {
+  background: #C60C30 !important;
+  color: #FFD700 !important;
+  border: 2px solid #FFD700 !important;
+  font-weight: bold;
+  box-shadow: 0 0 12px #FFD70088;
 }
 #excitement-metrics-container {
   background: rgba(255,255,255,0.12);
